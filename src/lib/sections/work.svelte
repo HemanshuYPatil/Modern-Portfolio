@@ -123,7 +123,10 @@
 		currentActive = (currentActive == i) ? -1 : i;
 		if (currentActive >= 0) slider.targetPosition = -(workItems[i].offsetLeft - (window.innerWidth / 4) + window.innerWidth / 10);
 	}
-
+	function titleIn(node: HTMLElement) {
+		const titleAnimation = letterSlideIn(node, { delay: 15 });
+		titleAnimation.anime();
+	}
 	function titleSlide(node: HTMLElement) {
 		let title = letterSlideIn(node, { delay: 5, breakWord: false });
 		title.anime({
@@ -153,6 +156,8 @@
 			if (!gpuTier.isMobile) slider.animate();
 		} }}
 	>
+	
+	
 		<div class:mobile={$isMobile}>
 			<ul class="work-list" 
 				bind:this={listContainer} 
@@ -268,7 +273,7 @@
 						<div class="roles">
 							<div class="wrapper">
 								<div in:maskSlideIn={{reverse: true}} out:maskSlideOut>
-									<p class="descriptor">Role</p>
+									<p class="descriptor">Technology</p>
 								</div>
 								<ul in:maskSlideIn={{ reverse: true, delay: 100 }} out:maskSlideOut>
 									{#each data[currentActive].roles as role}
@@ -424,8 +429,8 @@
 					flex-basis: 0
 
 				p
-					font-size: 1.3vh
-					width: 65%
+					font-size: 2.0vh
+					width: 80%
 
 				.roles 
 					display: flex

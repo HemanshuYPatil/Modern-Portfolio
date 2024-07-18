@@ -110,45 +110,23 @@
 		<div class="flex">
 			<div class="flex-wrapper first">
 
-				<svg id="signature" class="h-signature" x="0px" y="0px" viewBox="0 0 190 136.9">
-					<g>
-						<path
-							bind:this={signaturePath1}
-							class="path-1"
-							style="fill:none;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;"
-							d="M38.1,51c0,0,4.9-34.4,39.6-37.7c11.1-1.1-11.5,86.2-48.9,87.5c-18.5,0.6,19-69.3,51.7-84.4c21.3-9.8,15.3,26,15.3,26s6.2-9.3,7.9-6.1c1.7,3.1,0.1,5.1,6.9-1.9c1-1.2,13.9,3.3,18.8-1.3c1.4-1.3,6.4,1.3,6.4,1.3"/>
-						<path
-							bind:this={signaturePath2}
-							class="path-2"
-							style="fill:none;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;"
-							d="M132.2,48.3l-23.9,78.8"/>
-						<path
-							bind:this={signaturePath3}
-							class="path-3"
-							style="fill:none;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;"
-							d="M110.3,55.3c0,0-0.7,11.7-2.8,18s-6.7,20.2-6.9,24.1"/>
-						<path
-							bind:this={signaturePath4}
-							class="path-4"
-							style="fill:none;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;"
-							d="M122,74.4c0,0-5.9-8-17.1-6.7c-11.1,1.3-20.2,11.3-21.1,12.6c-0.9,1.3-10,9.6,2.2,15s38.9-7.2,38.9-7.2s17.8-10,18.9-10s-4.6,5.9-4.3,7.2c0.4,1.3,2.8,2,7.2-1.5c1-0.8,17.2-0.8,22.2,1c1.9,0.7,3.5-0.2,5-1.4c1-0.8,9.4,2,9.4,2"/>
-					</g>
-				</svg>
+			
+				  
 
 			</div>
 			
 			<div class="flex-wrapper second">
 				<h1 class = "title">
 					<div class="title-mask">
-						<div class="word" bind:this={titleWord1Element}>Musab</div>
+						<div class="word" bind:this={titleWord1Element}>Hemanshu</div>
 					</div><br> 
 					<div class="title-mask">
-						<div class="word" bind:this={titleWord2Element}>Hassan</div>
+						<div class="word" bind:this={titleWord2Element}>Patil</div>
 					</div>
 				</h1>
 				<div class="occupation mask">
 					<p class = "paragraph" bind:this={shortDetailsElement}>
-						web developer from british columbia, canada
+						Full Stack developer from maharashtra, india
 					</p>
 				</div>
 				<div class="wrapper action-mask">
@@ -159,7 +137,7 @@
 							{/await}
 						</div>
 						<div>
-							scroll
+							scroll down	
 						</div>
 					</div>
 				</div>

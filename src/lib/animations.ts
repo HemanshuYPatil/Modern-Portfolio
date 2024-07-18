@@ -288,6 +288,7 @@ export function workImageIntro(node: HTMLElement, params?: { promise: Promise<an
         anime({
             targets: node,
             marginRight: "0%",
+            
             easing: "easeOutQuint",
             duration: 1400,
             delay: params.delay,

@@ -59,7 +59,7 @@
 			<button class="interactive clickable"
 				on:click={() => navigate($homeAnchor)}>
 
-				<img src="assets/imgs/logo.svg"
+				<img src="assets/imgs/patil.svg"
 					class="logo-icon"
 					alt="Logo"
 					draggable="false"
@@ -85,7 +85,7 @@
 								class="interactive clickable"
 								on:click={() => navigate($workAnchor)} 
 								in:mobileTransitionSwitcher={{ delay: 250 }}>
-								<p>Work</p>
+								<p>Projects</p>
 							</button>
 						</li>
 						<li use:introAnimation={{ delay: 1200 }}>
@@ -97,10 +97,10 @@
 							</button>
 						</li>
 						<li class="mobile">
-							<a href="mailto:musabhassan04@gmail.com" target="_blank" in:mobileTransitionSwitcher={{ delay: 350 }}>Email</a>
+							<a href="mailto:hemanshuypatil@gmail.com" target="_blank" in:mobileTransitionSwitcher={{ delay: 350 }}>Email</a>
 						</li>
 						<li use:introAnimation={{ delay: 1300 }}>
-							<a href="https://github.com/Musab-Hassan" target="_blank" in:mobileTransitionSwitcher={{ delay: 400 }}>Github</a>
+							<a href="https://github.com/HemanshuYPatil" target="_blank" in:mobileTransitionSwitcher={{ delay: 400 }}>Github</a>
 						</li>
 					{/key}
 				</ul>
