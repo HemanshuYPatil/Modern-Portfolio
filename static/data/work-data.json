@@ -20,5 +20,27 @@
                 "link": "https://eventlly.netlify.app"
             }
         ]
+    },
+    {
+        "id": "v1",
+        "title": "Notion",
+        "details": {
+            "description": "A feature-rich note-taking tool inspired by Notion, built with Next.js, Convex, offering real-time editing and secure user authentication with Clerk.",
+            "summary": "Web Application"
+        },
+        "date": "July 2024",
+        "roles": [
+            "Next JS",
+            "Convex",
+            "Tailwind",
+            "Clerk"
+        ],
+        "links": [
+            {
+                "type": "web",
+                "text": "Visit Site",
+                "link": "https://notion-eta-topaz.vercel.app"
+            }
+        ]
     }
 ]
