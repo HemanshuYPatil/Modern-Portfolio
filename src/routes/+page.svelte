@@ -11,16 +11,29 @@ import NavComponent from "$lib/components/nav.svelte"
 import Footer from "$lib/components/footer.svelte";
 import CursorDot from "$lib/components/cursor-dot.svelte"
 import Loader from "$lib/components/loader.svelte";
+  import { Toaster } from "svelte-french-toast";
+
 
 let scrollContainer: HTMLElement, navBar: HTMLElement;
 let loading: boolean = true;
+
+async function fetchData() {
+    const response = await fetch("/api/work");
+    if (!response.ok) {
+        throw new Error('Failed to fetch data');
+    }
+    return await response.json();
+}
+
 
 onMount(async () => {
 	// Disable scrolling on initial load
 	scrollContainer.style.overflowY = "hidden";
 	scrollContainer.scrollTo(0, 0);
+
+	const workItems = await fetchData();
 	
-	workItemsFetch.set(await fetchJsonData("/data/work-data.json")); // Wait for work data to load
+	workItemsFetch.set(await workItems); // Wait for work data to load
 	siteDataFetch.set(await fetchJsonData("/data/data.json")); // Wait for work data to load
 
 	await Promise.allSettled($imgPromises); // Wait for images to load
@@ -54,6 +67,8 @@ onMount(async () => {
 
 <!-- Page loading progress bar -->
 {#if loading} <Loader></Loader> {/if}
+
+<Toaster ></Toaster>
 
 <div id="scroll-frame" bind:this={scrollContainer}>
 	<!-- Top nav-bar and mobile nav-bar -->

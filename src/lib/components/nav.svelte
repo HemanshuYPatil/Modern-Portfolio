@@ -85,7 +85,7 @@
 								class="interactive clickable"
 								on:click={() => navigate($workAnchor)} 
 								in:mobileTransitionSwitcher={{ delay: 250 }}>
-								<p>Projects</p>
+								<p>Work</p>
 							</button>
 						</li>
 						<li use:introAnimation={{ delay: 1200 }}>

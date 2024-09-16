@@ -1,7 +1,7 @@
 {
-	"name": "musabhassan.com",
+	"name": "hemanshupatil.com",
 	"author": {
-		"name": "Musab Hassan"
+		"name": "Hemanshu Patil"
 	},
 	"version": "2.2.0",
 	"private": true,
@@ -26,10 +26,17 @@
 		"vite": "^5.0.12"
 	},
 	"dependencies": {
+		"@vitejs/plugin-react": "^4.3.1",
 		"animejs": "^3.2.1",
 		"bezier-easing": "^2.1.0",
 		"detect-gpu": "^4.0.7",
+		"gsap": "^3.12.5",
+		"mongodb": "^6.9.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-hot-toast": "^2.4.1",
 		"slickscrolljs": "^2.0.2",
+		"svelte-french-toast": "^1.2.0",
 		"three": "^0.136.0"
 	},
 	"type": "module"
