@@ -27,49 +27,36 @@ async function fetchData() {
 
 
 onMount(async () => {
-    // Disable scrolling on initial load
-    scrollContainer.style.overflowY = "hidden";
-    scrollContainer.scrollTo(0, 0);
+	// Disable scrolling on initial load
+	scrollContainer.style.overflowY = "hidden";
+	scrollContainer.scrollTo(0, 0);
+	loading = true;
+	const workItems = await fetchData();
+	
+	workItemsFetch.set( workItems); // Wait for work data to load
+	siteDataFetch.set(await fetchJsonData("/data/data.json")); // Wait for work data to load
 
-    // Initialize loader
-    loading = true;
+	await Promise.allSettled($imgPromises); // Wait for images to load
+	await loaderAnimationPromise; // Wait until loading animation is complete
 
-    try {
-        // Fetch work items and wait for all images to load
-        const workItems = await fetchData();
+	loading = false; // Destroy loader component 
+	loadPageResolve(); // Resolve loadPagePromise
+	devMsg();
 
-        // Update state with fetched data
-        workItemsFetch.set(workItems);
+	// Resolve slickScroll promise and pass momentumScroll's value
+	$slickScrollInstance = new (slickScroll as any)({
+		root: scrollContainer,
+		easing: "easeOutCirc",
+		duration: 1500,
+		fixedOffsets: [
+			navBar
+		]
+	});
 
-        // Wait for all images to load
-        await Promise.allSettled($imgPromises);
-
-        // Wait until loading animation is complete
-        await loaderAnimationPromise;
-
-        // Resolve loadPagePromise after loading is complete
-        loadPageResolve();
-
-        // Initialize slickScroll instance
-        $slickScrollInstance = new (slickScroll as any)({
-            root: scrollContainer,
-            easing: "easeOutCirc",
-            duration: 1500,
-            fixedOffsets: [navBar]
-        });
-
-        // Dev message for debugging
-        devMsg();
-    } catch (error) {
-        // Handle any errors that may occur during fetching or loading
-        console.error("An error occurred during the loading process:", error);
-    } finally {
-        // Ensure that the loader is hidden and scrolling is enabled in case of error
-        loading = false;
-        scrollContainer.style.overflowY = "auto";
-    }
+	// Enable scrolling
+	scrollContainer.style.overflowX = "hidden";
+	scrollContainer.style.overflowY = "auto";
 });
-
 
 </script>
 
