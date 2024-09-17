@@ -78,7 +78,7 @@
 							><a
 								href="mailto:hemanshuypatil@gmail.com"
 								target="_blank"
-								class="clickable sublink link">Email Me</a
+								class="clickable sublink link">Know More</a
 							></span
 						>
 					</div>

@@ -22,7 +22,5 @@ export async function GET() {
             headers: { 'Content-Type': 'application/json' },
             status: 500,
         });
-    } finally {
-        await client.close();
-    }
+    } 
 }

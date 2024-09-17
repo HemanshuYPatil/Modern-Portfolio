@@ -40,7 +40,7 @@ onMount(async () => {
 	await Promise.allSettled($imgPromises); // Wait for images to load
 	await loaderAnimationPromise; // Wait until loading animation is complete
 
-	loading = false; // Destroy loader component 
+	// loading = false; // Destroy loader component 
 	loadPageResolve(); // Resolve loadPagePromise
 	devMsg();
 
