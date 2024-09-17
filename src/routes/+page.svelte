@@ -11,7 +11,8 @@ import NavComponent from "$lib/components/nav.svelte"
 import Footer from "$lib/components/footer.svelte";
 import CursorDot from "$lib/components/cursor-dot.svelte"
 import Loader from "$lib/components/loader.svelte";
-  import { Toaster } from "svelte-french-toast";
+import { Toaster } from "svelte-french-toast";
+
 
 
 let scrollContainer: HTMLElement, navBar: HTMLElement;
@@ -33,7 +34,7 @@ onMount(async () => {
 	loading = true;
 	const workItems = await fetchData();
 	
-	workItemsFetch.set( workItems); // Wait for work data to load
+	workItemsFetch.set(await workItems); // Wait for work data to load
 	siteDataFetch.set(await fetchJsonData("/data/data.json")); // Wait for work data to load
 
 	await Promise.allSettled($imgPromises); // Wait for images to load
@@ -69,6 +70,7 @@ onMount(async () => {
 {#if loading} <Loader></Loader> {/if}
 
 <Toaster ></Toaster>
+
 
 <div id="scroll-frame" bind:this={scrollContainer}>
 	<!-- Top nav-bar and mobile nav-bar -->
@@ -111,6 +113,31 @@ onMount(async () => {
 	-moz-osx-font-smoothing: grayscale
 	-webkit-font-smoothing: antialiased
 
+
+
+#nav-bar
+	position: fixed
+	top: 10vh
+	z-index: 100
+
+
+::-webkit-scrollbar
+	width: 8px    // Default width for the vertical scrollbar
+	height: 8px   // Default height for the horizontal scrollbar
+	background-color: transparent
+	transition: all 0.3s ease  // Smooth animation for width/height changes
+
+/* When hovering over the scrollbar area */
+::-webkit-scrollbar:hover
+	width: 12px    // Expand the scrollbar when hovered
+	height: 12px
+
+::-webkit-scrollbar-thumb
+	background-color: #FFFFFF
+	border-radius: 10px
+	transition: background-color 0.3s ease  // Smooth transition for thumb color
+
+/* Page-specific scrollbar behaviors */
 #scroll-frame
 	top: 0
 	left: 0
@@ -119,9 +146,5 @@ onMount(async () => {
 	position: relative
 	overflow: hidden auto
 
-#nav-bar
-	position: fixed
-	top: 10vh
-	z-index: 100
 
 </style>

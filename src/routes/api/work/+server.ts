@@ -3,6 +3,7 @@ import { MongoClient } from 'mongodb';
 const uri = "mongodb+srv://hemanshuypatil:UnxbhusSxbO7f5IL@cluster0.gp49h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri);
 
+
 export async function GET() {
     try {
         await client.connect();

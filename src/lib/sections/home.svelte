@@ -558,7 +558,7 @@
 			justify-content: center
 
 			&.second
-				margin-right: -5vw 
+				margin-right: -1vw 
 				justify-content: flex-end
 
 			h1

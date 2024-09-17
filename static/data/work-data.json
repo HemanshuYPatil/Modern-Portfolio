@@ -45,7 +45,7 @@
         },
     {
         "id": "kic",
-        "title": "FeedBack",
+        "title": "",
         "details": {
             "description": "An advanced note-taking application, leveraging Next.js and Supabase for seamless real-time Track the Feedback, with secure user authentication powered by Clerk.",
             "summary": "Web Application"
@@ -66,3 +66,7 @@
         ]
     }
 ]
+
+
+
+
