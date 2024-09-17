@@ -74,7 +74,7 @@
         display: block
         height: 0.1rem
         width: 20rem
-        
+
         .loader, .loader-background
             position: absolute
             top: 0
@@ -86,7 +86,7 @@
 
         .loader 
             background-color: white
-            transition: width 0.8s ease 
+            transition: width 0.8s ease
 
         .outro
             transition: width 0.8s ease
@@ -94,4 +94,3 @@
             width: 0
 
 </style>
-
