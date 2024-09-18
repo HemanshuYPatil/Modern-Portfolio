@@ -260,7 +260,7 @@
 					<div class="bottom-align">
 						<div>
 							<div in:maskSlideIn={{ reverse: true }} out:maskSlideOut>
-								<p class="paragraph">
+								<p class="paragraph" style="font-size: small;">
 									{data[currentActive].details.description}
 								</p>
 							</div>
