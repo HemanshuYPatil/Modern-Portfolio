@@ -10,7 +10,8 @@
 
 	let section1Element: HTMLElement, section2Element: HTMLElement;
 	let profilePicContainer: HTMLElement;
-
+	let img = "";
+	let self = "";
 	// Promise which when resolved will trigger svelte animations
 	let sectionOneResolve: (value?: any) => void;
 	let sectionOnePromise = new Promise(
@@ -20,7 +21,7 @@
 	let sectionTwoPromise = new Promise(
 		(resolve) => (sectionTwoResolve = resolve),
 	);
-
+	let formattedself = "";
 	onMount(async () => {
 		// Wait for page to load
 		await loadPagePromise;
@@ -36,6 +37,36 @@
 		onScrolledIntoView(section2Element, () => sectionTwoResolve(true));
 	});
 
+	onMount(async () => {
+		try {
+			const res = await fetch("/api/img"); // Replace with the actual endpoint
+			if (!res.ok) {
+				throw new Error("Failed to fetch developer details");
+			}
+
+			const data = await res.json();
+
+			img = data.image;
+		} catch (error) {
+			console.error(error);
+		}
+	});
+
+	onMount(async () => {
+		try {
+			const res = await fetch("/api/myself"); // Replace with the actual endpoint
+			if (!res.ok) {
+				throw new Error("Failed to fetch developer details");
+			}
+
+			const data = await res.json();
+
+			self = data.myself;
+		} catch (error) {
+			console.error(error);
+		}
+	});
+
 	function titleIn(node: HTMLElement) {
 		const titleAnimation = letterSlideIn(node, { delay: 15 });
 		titleAnimation.anime();
@@ -47,6 +78,19 @@
 			element: node,
 			speedY: 0.8,
 		});
+	}
+	function MyComponent() {
+		const renderWithLineBreaks = (text: string) => {
+			return text.split("<br/>").map(
+				(item: any, index: any) =>
+					`<span key={index}>
+						{item}
+						<br />
+					</span>`,
+			);
+		};
+
+		return `<div>{renderWithLineBreaks(self)} </div>`;
 	}
 </script>
 
@@ -65,11 +109,7 @@
 					}}
 				>
 					<p class="paragraph">
-						I'm a full-stack web developer from Maharashtra, India. I specialize in designing and developing web applications, handling both the frontend and backend.<br
-						/><br />I work  individuals to
-						create beautiful, responsive, and scalable web products
-						for them. Think we can make something great
-						together? Let's talk over email.
+						I'm a full-stack web developer from Maharashtra, India. I specialize in designing and developing web applications, handling both the frontend and backend.<br/><br/>I work individuals to create beautiful, responsive, and scalable web products for them. Think we can make something great together? Let's talk over email.
 					</p>
 				</div>
 				<div class="social-button-wrapper">
@@ -103,7 +143,7 @@
 				</div>
 			</div>
 			<div class="profile-image" use:addSlickScrollOffset>
-				{#await loadImage("assets/imgs/p.jpeg") then src}
+				{#await loadImage(img) then src}
 					<img
 						{src}
 						in:maskSlideIn={{

@@ -18,6 +18,24 @@
     signaturePath4: SVGPathElement;
 
   let siteData: SiteData = { availablity_date: "" };
+  let Demail = "";
+  let Dphone = "";
+
+  onMount(async () => {
+    try {
+      const res = await fetch("/api/myself");
+      if (!res.ok) {
+        throw new Error("Failed to fetch developer details");
+      }
+
+      const data = await res.json();
+
+      Demail = data.email;
+      Dphone = data.phone;
+    } catch (error) {
+      console.error(error);
+    }
+  });
 
   siteDataFetch.subscribe((val) => {
     if (val !== undefined) siteData = val;
@@ -26,7 +44,7 @@
   const currentYear = new Date().getFullYear();
 
   function handlecopy() {
-    navigator.clipboard.writeText("+917058026892").then(() => {
+    navigator.clipboard.writeText("+91 " + Dphone).then(() => {
       toast.success("Copied!", {
         style: "border-radius: 70px; background: #333; color: #fff;",
         position: "bottom-center",
@@ -125,10 +143,15 @@
       <a
         class="button large-text"
         bind:this={fullEmailLinkElement}
-        href="mailto:hemanshuypatil@gmail.com"
-        target="_blank">hemanshuypatil@gmail.com</a
+        href="mailto:${Demail}"
+        target="_blank"
       >
+       hemanshuypatil@gmail.com
+      </a>
+     
       <br />
+      <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <p
         on:click={handlecopy}
         style="margin-top: 10px;"
@@ -146,7 +169,7 @@
       </p>
     </div>
   </div>
-
+  <!--  xmlns:svgjs="http://svgjs.dev/svgjs" -->
   <div class="flex-wrapper decor" bind:this={statusElement}>
     <svg
       id="signature"
@@ -157,7 +180,6 @@
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      xmlns:svgjs="http://svgjs.dev/svgjs"
       width="1000"
       viewBox="0 0 2000 686"
       ><g transform="matrix(1,0,0,1,-1.2121212121212466,-2.3818077474892334)"
