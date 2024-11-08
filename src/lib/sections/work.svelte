@@ -268,7 +268,7 @@
 						<div class="roles">
 							<div class="wrapper">
 								<div in:maskSlideIn={{reverse: true}} out:maskSlideOut>
-									<p class="descriptor">Role</p>
+									<p class="descriptor">Technology</p>
 								</div>
 								<ul in:maskSlideIn={{ reverse: true, delay: 100 }} out:maskSlideOut>
 									{#each data[currentActive].roles as role}
