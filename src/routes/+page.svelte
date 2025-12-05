@@ -83,7 +83,7 @@ onMount(async () => {
 	<WorkSection></WorkSection>
 	<AboutSection></AboutSection>
 	<!-- svelte-ignore missing-declaration -->
-	<ExperienceSection></ExperienceSection>
+	<!-- <ExperienceSection></ExperienceSection> -->
 	<!-- <ServicesSection></ServicesSection> -->
 	<Footer></Footer>
 </div>

@@ -1,0 +1,155 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "imports": [
+      "_internal.js",
+      "_shared-server.js"
+    ],
+    "isEntry": true,
+    "src": ".svelte-kit/generated/server/internal.js"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "imports": [
+      "_ssr.js",
+      "_shared-server.js"
+    ]
+  },
+  "_sanityClient.js": {
+    "file": "chunks/sanityClient.js"
+  },
+  "_shared-server.js": {
+    "file": "chunks/shared-server.js"
+  },
+  "_ssr.js": {
+    "file": "chunks/ssr.js"
+  },
+  "_stores.js": {
+    "file": "chunks/stores.js",
+    "imports": [
+      "_ssr.js",
+      "_exports.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_stores.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/layout.svelte": {
+    "file": "entries/fallbacks/layout.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/layout.svelte"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "imports": [
+      "_internal.js",
+      "_exports.js",
+      "_index.js",
+      "_shared-server.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
+  },
+  "src/routes/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.CIUFa9hr.css"
+    ],
+    "file": "entries/pages/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_index.js",
+      "_stores.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+page.svelte"
+  },
+  "src/routes/+page.ts": {
+    "file": "entries/pages/_page.ts.js",
+    "isEntry": true,
+    "src": "src/routes/+page.ts"
+  },
+  "src/routes/api/experience/+server.ts": {
+    "file": "entries/endpoints/api/experience/_server.ts.js",
+    "imports": [
+      "_sanityClient.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/api/experience/+server.ts"
+  },
+  "src/routes/api/img/+server.ts": {
+    "file": "entries/endpoints/api/img/_server.ts.js",
+    "isEntry": true,
+    "src": "src/routes/api/img/+server.ts"
+  },
+  "src/routes/api/myself/+server.ts": {
+    "file": "entries/endpoints/api/myself/_server.ts.js",
+    "isEntry": true,
+    "src": "src/routes/api/myself/+server.ts"
+  },
+  "src/routes/api/services/+server.ts": {
+    "file": "entries/endpoints/api/services/_server.ts.js",
+    "imports": [
+      "_sanityClient.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/api/services/+server.ts"
+  },
+  "src/routes/api/uploadthing/+server.ts": {
+    "file": "entries/endpoints/api/uploadthing/_server.ts.js",
+    "imports": [
+      "_shared-server.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/api/uploadthing/+server.ts"
+  },
+  "src/routes/api/user/+server.ts": {
+    "file": "entries/endpoints/api/user/_server.ts.js",
+    "imports": [
+      "_sanityClient.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/api/user/+server.ts"
+  },
+  "src/routes/api/work/+server.ts": {
+    "file": "entries/endpoints/api/work/_server.ts.js",
+    "imports": [
+      "_sanityClient.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/api/work/+server.ts"
+  },
+  "src/routes/studio/[...catchall]/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.BMzc7WH2.css"
+    ],
+    "file": "entries/pages/studio/_...catchall_/_page.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/studio/[...catchall]/+page.svelte"
+  },
+  "src/routes/studio/[...catchall]/+page.ts": {
+    "file": "entries/pages/studio/_...catchall_/_page.ts.js",
+    "isEntry": true,
+    "src": "src/routes/studio/[...catchall]/+page.ts"
+  }
+}

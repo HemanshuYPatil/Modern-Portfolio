@@ -1,0 +1,29 @@
+{
+	"/": [
+		"src/routes/+page.ts"
+	],
+	"/api/experience": [
+		"src/routes/api/experience/+server.ts"
+	],
+	"/api/img": [
+		"src/routes/api/img/+server.ts"
+	],
+	"/api/myself": [
+		"src/routes/api/myself/+server.ts"
+	],
+	"/api/services": [
+		"src/routes/api/services/+server.ts"
+	],
+	"/api/uploadthing": [
+		"src/routes/api/uploadthing/+server.ts"
+	],
+	"/api/user": [
+		"src/routes/api/user/+server.ts"
+	],
+	"/api/work": [
+		"src/routes/api/work/+server.ts"
+	],
+	"/studio/[...catchall]": [
+		"src/routes/studio/[...catchall]/+page.ts"
+	]
+}

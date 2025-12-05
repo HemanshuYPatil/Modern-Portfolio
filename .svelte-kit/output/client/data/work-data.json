@@ -1,0 +1,72 @@
+[
+    {
+        "id": "lcml",
+        "title": "Evently",
+        "details": {
+            "description": "I worked as a full-stack developer on this startup project, where users can create and manage events.",
+            "summary": "Web Application"
+        },
+        "date": "December 2023",
+        "roles": [
+            "Next JS",
+            "Stripe",
+            "Appwrite",
+            "Senrty"
+        ],
+        "links": [
+            {
+                "type": "web",
+                "text": "Visit Site",
+                "link": "https://eventlly.netlify.app"
+            }
+        ]
+    },
+        {
+            "id": "v1",
+            "title": "Notion",
+            "details": {
+                "description": "A feature-rich note-taking tool inspired by Notion, built with Next.js, Convex, offering real-time editing and secure user authentication with Clerk.",
+                "summary": "Web Application"
+            },
+            "date": "July 2024",
+            "roles": [
+                "Next JS",
+                "Convex",
+                "Tailwind",
+                "Clerk"
+            ],
+            "links": [
+                {
+                    "type": "web",
+                    "text": "Visit Site",
+                    "link": "https://notion-eta-topaz.vercel.app"
+                }
+            ]
+        },
+    {
+        "id": "kic",
+        "title": "",
+        "details": {
+            "description": "An advanced note-taking application, leveraging Next.js and Supabase for seamless real-time Track the Feedback, with secure user authentication powered by Clerk.",
+            "summary": "Web Application"
+        },
+        "date": "August 2024",
+        "roles": [
+            "Next JS",
+            "Supabase",
+            "Tailwind",
+            "Clerk"
+        ],
+        "links": [
+            {
+                "type": "web",
+                "text": "Visit Site",
+                "link": "https://nexx-hazel.vercel.app"
+            }
+        ]
+    }
+]
+
+
+
+
