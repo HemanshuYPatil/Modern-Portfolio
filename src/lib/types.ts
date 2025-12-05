@@ -16,5 +16,7 @@ export type WorkData = {
         type: "web" | "android" | "ios" | undefined,
         text: string,
         link: string
-    }[]
+    }[],
+    coverImageUrl?: string,
+    appScreenshotUrl?: string
 }[]

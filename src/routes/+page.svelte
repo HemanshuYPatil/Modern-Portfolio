@@ -12,7 +12,8 @@ import Footer from "$lib/components/footer.svelte";
 import CursorDot from "$lib/components/cursor-dot.svelte"
 import Loader from "$lib/components/loader.svelte";
 import { Toaster } from "svelte-french-toast";
-
+import ExperienceSection from "$lib/sections/experience.svelte";
+import ServicesSection from "$lib/sections/services.svelte";
 
 
 let scrollContainer: HTMLElement, navBar: HTMLElement;
@@ -81,6 +82,9 @@ onMount(async () => {
 	<HomeSection></HomeSection>
 	<WorkSection></WorkSection>
 	<AboutSection></AboutSection>
+	<!-- svelte-ignore missing-declaration -->
+	<ExperienceSection></ExperienceSection>
+	<!-- <ServicesSection></ServicesSection> -->
 	<Footer></Footer>
 </div>
 

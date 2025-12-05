@@ -167,7 +167,7 @@
 							bind:this={ workItems[i] }>
 
 							<div class="img-wrapper">
-								{#await loadImage(`assets/imgs/work-back/${item.id}/cover.jpg`) then src}
+								{#await loadImage(item.coverImageUrl || "assets/imgs/home-back.jpg") then src}
 									<img bind:this={images[i]} src="{src}" on:dragstart|preventDefault draggable="false" alt="{item.title} Background">
 								{/await}
 							</div>
@@ -280,7 +280,15 @@
 						<div in:maskSlideIn={{ reverse: true }} out:maskSlideOut>
 							<div class="links">
 								{#each data[currentActive].links as link}
-									<a href={link.link} target="_blank" class="button">{link.text}</a>
+									<a href={link.link} target="_blank" class="button">
+                                        {#if link.type === 'android'}
+                                            Download App
+                                        {:else if link.type === 'web'}
+                                            Visit Site
+                                        {:else}
+                                            {link.text}
+                                        {/if}
+                                    </a>
 								{/each}
 							</div>
 						</div>

@@ -7,6 +7,7 @@
 	import { homeAnchor, workAnchor, aboutAnchor, loadPagePromise, isMobile } from "$lib/store";
 	import { maskSlideIn } from "$lib/animations";
 	import { browser } from "$app/environment";
+	import { page } from "$app/stores";
 
 	let mobileMenuActive: boolean = false;
 	let isMobileMenuAllowed: boolean = browser ? window.innerWidth <= 950 : false;
@@ -102,6 +103,11 @@
 						<li use:introAnimation={{ delay: 1300 }}>
 							<a href="https://github.com/HemanshuYPatil" target="_blank" in:mobileTransitionSwitcher={{ delay: 400 }}>Github</a>
 						</li>
+						{#if $page.url.searchParams.get('dev') === 'e4b1c7a93f5d4e1298ab77cd9130ff62'}
+							<li use:introAnimation={{ delay: 1400 }}>
+								<a href="/studio" target="_blank" in:mobileTransitionSwitcher={{ delay: 450 }}>Developer</a>
+							</li>
+						{/if}
 					{/key}
 				</ul>
 			</div>

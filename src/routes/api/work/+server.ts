@@ -1,26 +1,40 @@
-import { MongoClient } from 'mongodb';
-
-const uri = "mongodb+srv://hemanshuypatil:UnxbhusSxbO7f5IL@cluster0.gp49h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-const client = new MongoClient(uri);
-
+import { client, urlFor } from '$lib/sanityClient';
 
 export async function GET() {
     try {
-        await client.connect();
-        const database = client.db('Portfolio-Data');
-        const collection = database.collection('work');
+        const query = `*[_type == "project"]{
+            _id,
+            title,
+            details,
+            date,
+            roles,
+            links,
+            coverImage,
+            appScreenshot
+        }`;
+        const workItems = await client.fetch(query);
+        console.log(`Fetched ${workItems.length} projects from Sanity`);
 
-        const workItems = await collection.find({}).toArray();
+        const mappedItems = workItems.map((item: any) => ({
+            id: item._id,
+            title: item.title,
+            details: item.details,
+            date: item.date,
+            roles: item.roles,
+            links: item.links,
+            coverImageUrl: item.coverImage ? urlFor(item.coverImage).url() : null,
+            appScreenshotUrl: item.appScreenshot ? urlFor(item.appScreenshot).url() : null
+        }));
 
-        return new Response(JSON.stringify(workItems), {
+        return new Response(JSON.stringify(mappedItems), {
             headers: { 'Content-Type': 'application/json' },
             status: 200,
         });
     } catch (error) {
-        console.error('Error fetching data from MongoDB:', error); // Log the error to inspect the problem
+        console.error('Error fetching data from Sanity:', error);
         return new Response(JSON.stringify({ error: 'Failed to fetch data', message: error }), {
             headers: { 'Content-Type': 'application/json' },
             status: 500,
         });
-    } 
+    }
 }

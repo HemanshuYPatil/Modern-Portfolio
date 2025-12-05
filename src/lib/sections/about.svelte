@@ -39,7 +39,7 @@
 
 	onMount(async () => {
 		try {
-			const res = await fetch("/api/img"); // Replace with the actual endpoint
+			const res = await fetch("/api/user"); // Replace with the actual endpoint
 			if (!res.ok) {
 				throw new Error("Failed to fetch developer details");
 			}
@@ -47,20 +47,6 @@
 			const data = await res.json();
 
 			img = data.image;
-		} catch (error) {
-			console.error(error);
-		}
-	});
-
-	onMount(async () => {
-		try {
-			const res = await fetch("/api/myself"); // Replace with the actual endpoint
-			if (!res.ok) {
-				throw new Error("Failed to fetch developer details");
-			}
-
-			const data = await res.json();
-
 			self = data.myself;
 		} catch (error) {
 			console.error(error);
@@ -109,7 +95,7 @@
 					}}
 				>
 					<p class="paragraph">
-						I'm a full-stack web developer from Maharashtra, India. I specialize in designing and developing web applications, handling both the frontend and backend.<br/><br/>I work individuals to create beautiful, responsive, and scalable web products for them. Think we can make something great together? Let's talk over email.
+						{@html self || "I'm a full-stack web developer from Maharashtra, India. I specialize in designing and developing web applications, handling both the frontend and backend.<br/><br/>I work individuals to create beautiful, responsive, and scalable web products for them. Think we can make something great together? Let's talk over email."}
 					</p>
 				</div>
 				<div class="social-button-wrapper">
@@ -143,24 +129,17 @@
 				</div>
 			</div>
 			<div class="profile-image" use:addSlickScrollOffset>
-				{#await loadImage(img) then src}
-					<img
-						{src}
-						in:maskSlideIn={{
-							duration: 1200,
-							delay: 100,
-							reverse: true,
-							maskStyles: [
-								{ property: "width", value: "100%" },
-								{ property: "height", value: "100%" },
-							],
-						}}
-						alt="Hemanshu's Profile"
-						class="profile-pic"
-						draggable="false"
-					/>
-				{/await}
-			</div>
+			{#await loadImage(img || "assets/imgs/profile.png") then src}
+				<img src="{src}" in:maskSlideIn={{ duration: 1200,
+					delay: 100,
+					reverse: true,
+					maskStyles: [
+						{ property: "width", value: "100%"},
+						{ property: "height", value: "100%"}
+					]
+				}} alt="Hemanshu's Profile" class="profile-pic">
+			{/await}
+		</div>
 		{/await}
 	</div>
 </div>
